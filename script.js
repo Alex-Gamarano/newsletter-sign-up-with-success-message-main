@@ -24,7 +24,7 @@ btns.forEach((btn) => {
   });
 });
 
-window.addEventListener("resize", () => {
+window.addEventListener("scroll", () => {
   if (window.outerWidth > 767) {
     hero.attributes.src.value =
       "./assets/images/illustration-sign-up-desktop.svg";
