@@ -24,7 +24,17 @@ btns.forEach((btn) => {
   });
 });
 
-window.addEventListener("scroll", () => {
+window.addEventListener("load", () => {
+  if (window.outerWidth > 767) {
+    hero.attributes.src.value =
+      "./assets/images/illustration-sign-up-desktop.svg";
+  }
+  if (window.outerWidth < 767) {
+    hero.attributes.src.value =
+      "./assets/images/illustration-sign-up-mobile.svg";
+  }
+});
+window.addEventListener("resize", () => {
   if (window.outerWidth > 767) {
     hero.attributes.src.value =
       "./assets/images/illustration-sign-up-desktop.svg";
