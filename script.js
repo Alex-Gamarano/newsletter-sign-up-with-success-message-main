@@ -1,6 +1,6 @@
 let hero = document.getElementById("hero");
 let cards = document.querySelectorAll(".visible");
-let btns = document.querySelectorAll("button");
+let btns = document.querySelectorAll(".button");
 let mail = document.getElementById("email");
 let regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/;
 let err = document.createElement("span");
@@ -16,31 +16,18 @@ mail.addEventListener("input", () => {
   }
 });
 
-btns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    cards.forEach((card) => {
-      card.classList.toggle("invisible");
-    });
+function cardSwap() {
+  cards.forEach((card) => {
+    card.classList.toggle("invisible");
   });
+}
+
+btns[0].addEventListener("click", () => {
+  if (!mail.value) {
+    err.innerHTML = "email field is empty";
+  } else if (mail.value && err.innerHTML == "") setTimeout(cardSwap(), 1000);
 });
 
-window.addEventListener("load", () => {
-  if (window.outerWidth > 767) {
-    hero.attributes.src.value =
-      "./assets/images/illustration-sign-up-desktop.svg";
-  }
-  if (window.outerWidth < 767) {
-    hero.attributes.src.value =
-      "./assets/images/illustration-sign-up-mobile.svg";
-  }
-});
-window.addEventListener("resize", () => {
-  if (window.outerWidth > 767) {
-    hero.attributes.src.value =
-      "./assets/images/illustration-sign-up-desktop.svg";
-  }
-  if (window.outerWidth < 767) {
-    hero.attributes.src.value =
-      "./assets/images/illustration-sign-up-mobile.svg";
-  }
+btns[1].addEventListener("click", () => {
+  window.location.reload();
 });
