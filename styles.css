@@ -9,14 +9,13 @@
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
-  box-sizing: border-box;
-  overflow: hidden;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html {
